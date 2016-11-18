@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Auth } from './auth-service.service';
 
 @Component({
   selector: 'mg-header',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class HeaderComponent implements OnInit {
+	profile: any;
 
-  constructor() { }
+	constructor(private auth:Auth) {
+		this.profile = JSON.parse(localStorage.getItem('profile'));
+	}
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+	}
 
 }

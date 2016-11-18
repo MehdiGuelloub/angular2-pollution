@@ -39,18 +39,22 @@
                     </a>
                 </li>
                 <li id="openSearchBox"><a href=""><i class="fa fa-lg fa-search" aria-hidden="true"></i></a></li>
-                <li class="visible-xs"><a href=""><i class="fa fa-lg fa-sign-out" aria-hidden="true"></i></a></li>
-                <li class="dropdown hidden-xs">
+                
+                <li><a href="#" *ngIf="!auth.authenticated()" (click)="auth.login()">Connexion</a></li>
+
+                <li class="visible-xs"><a href="#" *ngIf="auth.authenticated()" (click)="auth.logout()"><i class="fa fa-lg fa-sign-out" aria-hidden="true"></i></a></li>
+
+                <li class="dropdown hidden-xs" *ngIf="auth.authenticated()" >
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <img src="dist/img/user-profile.png" class="user">
-                        <span class="hidden-xs">Dropdown</span> <span class="hidden-xs caret"></span>
+                        <img src="{{ profile.picture }}" class="img-circle user">
+                        <span class="hidden-xs">{{ profile.name }}</span> <span class="hidden-xs caret"></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="#"><i class="fa mr fa-user" aria-hidden="true"></i>Mon compte</a></li>
                         <li><a href="#"><i class="fa mr fa-cogs" aria-hidden="true"></i>Paramètres</a></li>
                         <li><a href="#"><i class="fa mr fa-question-circle" aria-hidden="true"></i>Aide</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#"><i class="fa mr fa-sign-out" aria-hidden="true"></i>Déconnexion</a></li>
+                        <li (click)="auth.logout()"><a href="#"><i class="fa mr fa-sign-out" aria-hidden="true"></i>Déconnexion</a></li>
                     </ul>
                 </li>
             </ul>
