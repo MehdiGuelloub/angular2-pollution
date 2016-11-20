@@ -1,0 +1,10 @@
+<a class="pull-left" href="#">
+    <img class="avatar" src="{{ comment.owner.image }}" alt="avatar">
+</a>
+<div class="comment-body">
+    <div class="comment-heading">
+        <h4 class="usercmt">{{ comment.owner.fullName }}</h4>
+        <h5 class="time">{{ comment.commentDate }}</h5>
+    </div>
+    <p>{{ comment.body }}</p>
+</div>

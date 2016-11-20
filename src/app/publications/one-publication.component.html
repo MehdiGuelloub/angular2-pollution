@@ -1,0 +1,41 @@
+<div class="panel panel-white post panel-shadow">
+    <div class="post-heading">
+        <div class="pull-left image">
+            <img src="{{ publication.user.image }}" class="img-circle avatar" alt="user profile image">
+        </div>
+        <div class="pull-left meta">
+            <div class="title h5">
+                <a href="#"><b>{{ publication.user.fullName }}</b></a>
+                made a post.
+            </div>
+            <h6 class="text-muted time">1 minute ago</h6>
+        </div>
+    </div> 
+    <div class="post-description"> 
+        <p>{{ publication.description }}</p>
+        <img src="{{ publication.fileUrl }}" 
+             class="img-responsive"
+             style="">
+        <div class="stats">
+            <a (click)="likeIt()" href="javascript:void(0)" class="stat-item no-style">
+                <img *ngIf="liked" src="assets/like.png" style="width:25px;"/>
+                <img *ngIf="!liked" src="assets/_like.png" style="width:25px;"/>
+                <span>{{ nb_likes }}</span>
+            </a>
+            <a (click)="dislikeIt()" href="javascript:void(0)" class="stat-item no-style">
+                <img *ngIf="disliked" src="assets/dislike.png" style="width:25px;"/>
+                <img *ngIf="!disliked" src="assets/_dislike.png" style="width:25px;"/>
+                <span>{{ nb_dislikes }}</span>
+            </a>
+            <a (click)="shareIt()" href="javascript:void(0)" class="stat-item no-style">
+                <img *ngIf="shared" src="assets/share.png" style="width:25px;"/>
+                <img *ngIf="!shared" src="assets/_share.png" style="width:25px;"/>
+                <span>{{ nb_shares }}</span>
+            </a>
+        </div>
+    </div>
+    <div class="post-footer">
+        <mg-comments-list></mg-comments-list>
+        <mg-map [defaultPositionLng]="50" [defaultPositionLng]="20"></mg-map>
+    </div>
+</div>

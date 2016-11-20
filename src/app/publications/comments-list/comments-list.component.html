@@ -1,0 +1,18 @@
+<form (ngSubmit)="addComment(form)" #form="ngForm">
+	<div class="input-group"> 
+	    <input 	class="form-control" 
+	    		placeholder="Add a comment" 
+	    		type="text" 
+	    		name="commentaire"
+	    		[(ngModel)]="commentaire.body" 
+	    		required>
+	    <span class="input-group-addon">
+	        <a href="#"><i class="fa fa-edit"></i></a>  
+	    </span>
+	</div>
+</form>
+<ul class="comments-list">
+    <li class="comment" *ngFor="let comment of comments">
+        <mg-comment [comment]="comment"></mg-comment>
+    </li>
+</ul>

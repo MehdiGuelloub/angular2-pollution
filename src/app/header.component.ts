@@ -7,13 +7,15 @@ import { Auth } from './auth-service.service';
   styles: []
 })
 export class HeaderComponent implements OnInit {
-	profile: any;
 
 	constructor(private auth:Auth) {
-		this.profile = JSON.parse(localStorage.getItem('profile'));
 	}
 
 	ngOnInit() {
+	}
+
+	get profile() {
+		return JSON.parse(localStorage.getItem('profile'));
 	}
 
 }
