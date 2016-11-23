@@ -1,4 +1,4 @@
-<mg-publish></mg-publish>
+<mg-publish *ngIf="auth.authenticated()" (newPublication)="update()" ></mg-publish>
 <div *ngFor="let p of publicationsList">
 	<mg-one-publication [publication]="p"></mg-one-publication>
 </div>

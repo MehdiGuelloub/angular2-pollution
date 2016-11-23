@@ -6,14 +6,15 @@
         <div class="pull-left meta">
             <div class="title h5">
                 <a href="#"><b>{{ publication.user.fullName }}</b></a>
-                made a post.
+                <a (click)="showMap()" class="position-pub"><i class="fa fa-map-marker" aria-hidden="true"></i>{{mapStat ? 'Cacher' : 'Afficher'}} la position</a>
             </div>
-            <h6 class="text-muted time">1 minute ago</h6>
+            <h6 class="text-muted time">Il y a quelques secondes..</h6>
         </div>
-    </div> 
+    </div>
+    <mg-map *ngIf="mapStat" [defaultPositionLat]="publication.lat" [defaultPositionLng]="publication.lng"></mg-map>
     <div class="post-description"> 
         <p>{{ publication.description }}</p>
-        <img src="{{ publication.fileUrl }}" 
+        <img src="http://localhost/pollution-blog/public{{ publication.fileUrl }}" 
              class="img-responsive"
              style="">
         <div class="stats">
@@ -35,7 +36,6 @@
         </div>
     </div>
     <div class="post-footer">
-        <mg-comments-list></mg-comments-list>
-        <mg-map [defaultPositionLng]="50" [defaultPositionLng]="20"></mg-map>
+        <mg-comments-list [publication]="publication.id" ></mg-comments-list>
     </div>
 </div>

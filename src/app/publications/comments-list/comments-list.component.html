@@ -1,4 +1,4 @@
-<form (ngSubmit)="addComment(form)" #form="ngForm">
+<form (ngSubmit)="addComment(form)" #form="ngForm" *ngIf="auth.authenticated()">
 	<div class="input-group"> 
 	    <input 	class="form-control" 
 	    		placeholder="Add a comment" 

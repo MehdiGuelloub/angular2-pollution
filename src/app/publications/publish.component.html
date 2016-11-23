@@ -1,12 +1,13 @@
 <div class="panel panel-white post panel-shadow">
     <div class="post-heading">
         <div class="pull-left image">
-            <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
+            <img src="{{ profile?.picture || 'assets/user-profile.png'}}" class="img-circle avatar" alt="user profile image">
         </div>
         <div class="pull-left meta">
             <div class="title h5">
-                <a href="#"><b>Ryan Haywood</b></a>
+                <a href="#"><b>{{ profile?.name || "Nom d'utilisateur"}}</b></a>
             </div>
+            <h6 class="text-muted time">Dites quelques chose, partagez des images, des videos ...</h6>
         </div>
     </div> 
     <div class="post-description row"> 
@@ -15,12 +16,15 @@
                 <textarea class="form-control" rows="3" [(ngModel)]="publication.body" name="body" 
                 required></textarea>
             </div>
-            <span class="col-sm-6"><input type="file" class="form-control" id="file"  [(ngModel)]="publication.file" name="file" required></span>
-            <input type="hidden" [(ngModel)]="publication.lat" name="lat">
-            <input type="hidden" [(ngModel)]="publication.lng" name="lng">
+            <span class="col-sm-6">
+                <input type="file" class="form-control" id="file" required
+                   ngFileSelect
+                   [options]="options"
+                   (onUpload)="handleUpload($event)">
+            </span>
             <span class="col-sm-offset-2 col-sm-2"><a (click)="showMap()" class="btn btn-success btn-block">Position</a></span>
             <span class="col-sm-2"><button type="submit" class="btn btn-danger btn-block">Publier</button></span>
         </form>
-        <mg-map *ngIf="showTheMap"></mg-map>
+        <mg-map [mapTitle]="'Séléctionner votre position:'" *ngIf="showTheMap"></mg-map>
     </div>
 </div>

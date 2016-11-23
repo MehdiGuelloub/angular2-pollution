@@ -189,7 +189,7 @@
 .navbar-custom .navbar-nav > .active > a:hover,
 .navbar-custom .navbar-nav > .active > a:focus {
   color: #c0c0c0;
-  background-color: #009688;
+  background-color: #793939;
 }
 .navbar-custom .navbar-nav > .disabled > a,
 .navbar-custom .navbar-nav > .disabled > a:hover,
@@ -219,7 +219,7 @@
 .navbar-custom .navbar-nav > .open > a,
 .navbar-custom .navbar-nav > .open > a:hover,
 .navbar-custom .navbar-nav > .open > a:focus {
-  background-color: #009688;
+  background-color: #793939;
   color: #c0c0c0;
 }
 .navbar-custom .navbar-nav > .open > a .caret,
@@ -245,7 +245,7 @@
   .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #c0c0c0;
-    background-color: #009688;
+    background-color: #793939;
   }
   .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a,
   .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a:hover,
@@ -513,4 +513,14 @@
 .no-style, .no-style:link, .no-style:visited, .no-style:hover, .no-style:active {
   text-decoration: none !important;
   color: #888 !important;
+}
+.position-pub, .position-pub:link, .position-pub:visited, .position-pub:hover, .position-pub:active {
+  text-decoration: none !important;
+  color: #24BE35 !important;
+  cursor: pointer;
+  margin-left: 20px;
+  font-style: 13px;
+}
+.position-pub i{
+  margin-right: 8px;
 }

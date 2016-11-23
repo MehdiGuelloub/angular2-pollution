@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header.component';
 import { PublicationsComponent } from './publications/publications.component';
@@ -11,6 +12,8 @@ import { PublicationsComponent } from './publications/publications.component';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
 import { AUTH_PROVIDERS } from 'angular2-jwt';
+import { Ng2UploaderModule } from 'ng2-uploader';
+
 import { Auth } from './auth-service.service';
 import { CommentsListComponent } from './publications/comments-list/comments-list.component';
 import { CommentComponent } from './publications/comments-list/comment.component';
@@ -31,6 +34,7 @@ import { OnePublicationComponent } from './publications/one-publication.componen
     OnePublicationComponent
   ],
   imports: [
+    Ng2UploaderModule,
     BrowserModule,
     CommonModule,
     FormsModule,
