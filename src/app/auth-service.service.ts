@@ -9,7 +9,14 @@ declare var Auth0Lock: any;
 
 @Injectable()
 export class Auth {
-  lock = new Auth0Lock('LctLaNAejFFxaMdLKfeKWBYrPJBnrIH9', 'mohamedmehdigloub.eu.auth0.com', {});
+  lock = new Auth0Lock('LctLaNAejFFxaMdLKfeKWBYrPJBnrIH9', 'mohamedmehdigloub.eu.auth0.com', {
+    theme: {
+      logo: 'assets/user-profile.png',
+      primaryColor: '#793939',
+      language: 'fr',
+      labeledSubmitButton: false
+    } 
+  });
 
   constructor(private blogueurService: BlogueurService) {
     this.lock.on('authenticated', (authResult: any) => {

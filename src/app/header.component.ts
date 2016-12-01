@@ -8,7 +8,13 @@ import { Auth } from './auth-service.service';
 })
 export class HeaderComponent implements OnInit {
 
+	private showSearch = false;
+
 	constructor(private auth:Auth) {
+	}
+
+	search(){
+		this.showSearch = !this.showSearch;
 	}
 
 	ngOnInit() {
