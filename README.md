@@ -2,6 +2,10 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.19-3.
 
+This frontend project is consuming restful web services from a backend developped using LARAVEL 5.3 https://github.com/MehdiGuelloub/pollution-blog-laravel-backend.
+
+In this project I developped small blog in which logged in users can share some posts and pictures and comment on them.
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
